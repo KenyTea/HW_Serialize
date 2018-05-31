@@ -13,54 +13,48 @@ namespace HW_Serialize.Module
     public class MyClass
     {
         /*имя; фамилия; телефон; год рождения*/
-        string path = @"C:\Users\AVassilyev\Documents\visual studio 2017\Projects\HW_Serialize\MyFile.csv";
-       public Person p = new Person();
+        string path = @"MyFile.csv";
+        public Person p = new Person();
         //List<Person> person;
 
         public void AddToFile()
-        {            
+        {
             FileInfo file = new FileInfo(path);
 
-            using (FileStream fs = file.Open(FileMode.OpenOrCreate, FileAccess.Write))
+            using (StreamWriter sw = new StreamWriter(path))
             {
-                using (StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.Default))
-                {
-                    //sw.WriteLine(p.Name);
-                    //sw.WriteLine(p.Family);
-                    //sw.WriteLine(p.Tel);
-                    //sw.WriteLine(p.Dfb);
+                //sw.WriteLine(p.Name);
+                //sw.WriteLine(p.Family);
+                //sw.WriteLine(p.Tel);
+                //sw.WriteLine(p.Dfb);
 
-                    sw.Write("Ivan");
-                    sw.Write(" ");
-                    sw.Write("Ivanov");
-                    sw.Write(" ");
-                    sw.Write("8777777770");
-                    sw.Write(" ");
-                    sw.WriteLine("1999");
+                sw.Write("Ivan");
+                sw.Write(" ");
+                sw.Write("Ivanov");
+                sw.Write(" ");
+                sw.Write("8777777770");
+                sw.Write(" ");
+                sw.WriteLine("1999");
 
-                    Console.WriteLine("The file is created");
-                }
+                Console.WriteLine("The file is created");
             }
         }
 
         public void ReadFileAndAddToList()
         {
             FileInfo file = new FileInfo(path);
-            
 
-            using (FileStream fs = file.Open(FileMode.Open, FileAccess.Read))
+            using (StreamReader sr = new StreamReader(path))
             {
-                using (StreamReader sr = new StreamReader(fs, System.Text.Encoding.Default))
-                {
-                    string temp = sr.ReadLine();
-                    var m = temp.Split(' ');
-                    p.Name = m[0];
-                    p.Family = m[1];
-                    p.Tel = m[2];
-                    p.Dfb = m[3];
-                    p.person.Add(p);
-                }
+                string temp = sr.ReadLine();
+                var m = temp.Split(' ');
+                p.Name = m[0];
+                p.Family = m[1];
+                p.Tel = m[2];
+                p.Dfb = m[3];
+                p.person.Add(p);
             }
+
         }
 
         public void Print()
@@ -74,16 +68,17 @@ namespace HW_Serialize.Module
             }
         }
 
-        //public static void SoapSerialize()
-        //{
-        //    SoapFormatter formater = new SoapFormatter();
+        public void SoapSerialize()
+        {
+            SoapFormatter formater = new SoapFormatter();
 
-        //    using (FileStream fs = new FileStream("Person.soap", FileMode.OpenOrCreate))
-        //    {
-        //        formater.Serialize(fs, per)
-        //        formater.Serialize(fs, );
-        //        Console.WriteLine("Serial OK!");
-        //    }
-        //}
+            using (FileStream fs = new FileStream("Person.soap", FileMode.OpenOrCreate))
+            //{
+            //    formater.Serialize(fs, Person p)
+            //         formater.Serialize()
+            //    formater.Serialize(fs, );
+                Console.WriteLine("Serial OK!");
+            }
+        }
     }
 }

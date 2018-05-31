@@ -15,7 +15,7 @@ namespace HW_Serialize.Module
         public string Tel { get; set; }
         public string Dfb { get; set; }
 
-        public List<Person> person;
+        public List<Person> person = new List<Person>();
 
         //public Person()
         //{
