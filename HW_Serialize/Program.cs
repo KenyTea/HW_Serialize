@@ -24,8 +24,8 @@ namespace HW_Serialize
             sb.SerializeMetod();
             sb.DeserializeMetod();
 
-            Console.WriteLine("------------------------------------------------");
-
+            Console.WriteLine("==============================================");
+            Console.WriteLine();
 
             MyClass mc = new MyClass();
 
