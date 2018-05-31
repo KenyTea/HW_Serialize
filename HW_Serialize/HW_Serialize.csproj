@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Module\Book.cs" />
+    <Compile Include="Module\MyClass.cs" />
+    <Compile Include="Module\Person.cs" />
     <Compile Include="Module\Servicebook.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
