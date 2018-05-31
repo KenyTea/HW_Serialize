@@ -15,25 +15,14 @@ namespace HW_Serialize.Module
         public string Tel { get; set; }
         public string Dfb { get; set; }
 
+        [NonSerialized]
         public List<Person> person = new List<Person>();
 
-        //public Person()
-        //{
-        //    Name ="Ivan";
-        //    Family = "Ivanov";
-        //    Tel ="+7777777770";
-        //    Dfb = "1999";
-        //}
 
-        //public void Print()
-        //{
-        //    foreach (var item in person)
-        //    {
-        //        Console.WriteLine(item.Name);
-        //        Console.WriteLine(item.Family);
-        //        Console.WriteLine(item.Tel);
-        //        Console.WriteLine(item.Dfb);
-        //    }
-        //}
+        public Person[] persons;
+        public void FilPerson()
+        {
+            persons = person.ToArray();
+        }
     }
 }
