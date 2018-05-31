@@ -32,7 +32,7 @@ namespace HW_Serialize
             mc.AddToFile();
             mc.ReadFileAndAddToList();
 
-           // Person pers = new Person();
+            mc.SoapSerialize();
 
             mc.Print();
 
