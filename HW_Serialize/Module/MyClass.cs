@@ -73,10 +73,8 @@ namespace HW_Serialize.Module
             SoapFormatter formater = new SoapFormatter();
 
             using (FileStream fs = new FileStream("Person.soap", FileMode.OpenOrCreate))
-            //{
-            //    formater.Serialize(fs, Person p)
-            //         formater.Serialize()
-            //    formater.Serialize(fs, );
+            {          
+                formater.Serialize(fs, p);
                 Console.WriteLine("Serial OK!");
             }
         }
